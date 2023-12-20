@@ -45,7 +45,7 @@ $tasks = [
   new Task(
     1,
     'Buy groceries',
-    'Task 1 description',
+    '1st description',
     'Task 1 long description',
     false,
     '2023-03-01 12:00:00',
@@ -80,7 +80,11 @@ $tasks = [
   ),
 ];
 
-Route::get('/', function () use ($tasks) {
+Route::get('/', function(){
+  return redirect()->route('tasks.index');
+});
+
+Route::get('/tasks', function () use ($tasks) {
     return view('index', [
         'tasks' => $tasks
     ]);
@@ -88,7 +92,10 @@ Route::get('/', function () use ($tasks) {
 
 
 
-Route::get('/{id}', function ($id) {
-    return 'One task show';
-
+Route::get('/tasks/{id}', function ($id) use ($tasks) {
+  $task = collect($tasks)->firstWhere('id', $id);
+  if (!$task) {
+    abort(Response::HTTP_INTERNAL_SERVER_ERROR);
+  }
+  return view ('show', ['tasks'=> $task]);
 })->name('tasks.show');
