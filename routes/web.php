@@ -45,5 +45,6 @@ Route::match(['get', 'post'], '/tasks/store', function (Request $request) {
   $task->long_description = $data['long_description'];
   $task->save();
 
-  return redirect()->route('tasks.show', ['id' => $task->id]);
+  return redirect()->route('tasks.show', ['id' => $task->id])
+      ->with('success', 'Task created successfully!');
 })->name('tasks.store');
