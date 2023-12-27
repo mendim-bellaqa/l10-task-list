@@ -9,4 +9,4 @@
     @empty
         <div class="text-center">There is no task!</div>
     @endforelse
-@endsection
+@endsection 
