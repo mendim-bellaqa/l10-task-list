@@ -18,7 +18,7 @@
         <label for="title">
             Title
         </label>
-        <input type="text" name="title" id="title" placeholder="Title" />
+        <input type="text" name="title" id="title" value="{{ old('title') }}"/>
             @error('title')
                 <p class='error-message'>{{ $message }}</p>
             @enderror
@@ -26,7 +26,7 @@
 
     <div>
         <label>Description</label>
-        <textarea name="description" id="description" rows="5" placeholder="Description"></textarea>
+        <textarea name="description" id="description" rows="5"  placeholder="Description"></textarea>
         @error('description')
         <p class='error-message'>{{ $message }}</p>
             @enderror
