@@ -9,4 +9,12 @@
     @empty
         <div class="text-center">There is no task!</div>
     @endforelse
+
+    @if ($tasks->count())
+    <div>
+        <nav>
+            {{ $tasks->links() }}
+        </nav>
+    </div
+    @endif
 @endsection 
