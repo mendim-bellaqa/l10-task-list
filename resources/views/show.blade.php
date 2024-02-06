@@ -3,11 +3,15 @@
 @section('title', $task->title)
 
 @section('content')
-  <p>{{ $task->description }}</p>
 
-  <div class="mb-4">
+<div class="mb-4">
     <a href="{{ route('tasks.index') }}" class="link">← Go back to the task list!</a>
   </div>
+
+  
+  <p>{{ $task->description }}</p>
+
+
 
   @if ($task->long_description)
     <p>{{ $task->long_description }}</p>
