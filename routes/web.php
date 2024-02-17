@@ -23,7 +23,7 @@ Route::get('/tasks', function () {
   return view('index', [
       'tasks' => Task::latest()->paginate(10)
   ]);
-})->name('tasks.index');
+})->name('tasks.index')->middleware('auth');
 
 
 Route::view('/tasks/create', 'create')
@@ -72,3 +72,6 @@ Route::put('tasks/{task}/toggle-complete', function (Task $task) {
 
   return redirect()->back()->with('success', 'Task updated successfully!');
 })->name('tasks.toggle-complete');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
