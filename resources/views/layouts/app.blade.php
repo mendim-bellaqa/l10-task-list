@@ -5,12 +5,12 @@
   <!-- component -->
 <header>
   @if(Auth::check())
-    <nav class="color-black px-4 lg:px-6 py-2.5 dark:bg-gray-200 boder-round">
+    <nav class=" px-4 lg:px-6 py-2.5 dark:bg-black text-white boder-round">
         <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <div class="flex items-center lg:order-2">
             <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
                       <li>
-                          <a href="/home" class="block py-2 pr-4 pl-3 text-white rounded bg-blue-700 lg:bg-transparent  lg:p-0 dark:text-black" aria-current="page">Home</a>
+                          <a href="/home" class="block py-2 pr-4 pl-3 rounded bg-white lg:bg-transparent  lg:p-0 dark:text-white" aria-current="page">Home</a>
                       </li>
                   </ul>
                   <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
@@ -22,16 +22,16 @@
             <div class="flex items-center lg:order-2">
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-                    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Logout</button>
+                    <button type="submit" class="text-black  bg-white   font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2  focus:outline-none dark:focus:ring-blue-800">Logout</button>
                 </form>
         </div>
     </nav>
   @else
-    <nav class="bg-white border-gray-100 px-4 lg:px-6 py-2.5 dark:bg-gray-300 boder-round">
+    <nav class=" border-gray-100 px-4 lg:px-6 py-2.5  boder-round">
           <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
               <div class="flex items-center lg:order-2">
-                  <a href="/login" class="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Log in</a>
-                  <a href="/register" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Get started</a>
+                  <a href="/login" class="text-white border-black border-4  font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2  focus:outline-none">Log in</a>
+                  <a href="/register" class="bg-white text-black  font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 ">Get started</a>
                   <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
                       <span class="sr-only">Open menu</span>
                       <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
@@ -41,7 +41,7 @@
               <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
                   <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
                       <li>
-                          <a href="/home" class="block py-2 pr-4 pl-3 text-white rounded bg-blue-700 lg:bg-transparent lg:p-0 dark:text-black" aria-current="page">Home</a>
+                          <a href="/home" class="block py-2 pr-4 pl-3 text-white text-black rounded bg-white lg:bg-transparent lg:p-0 " aria-current="page">Home</a>
                       </li>
                   </ul>
               </div>
@@ -58,32 +58,35 @@
   {{-- blade-formatter-disable --}}
   <style type="text/tailwindcss">
     .btn {
-      @apply rounded-md px-2 py-1 text-center font-medium text-slate-700 shadow-sm ring-1 ring-slate-700/10 hover:bg-slate-50
+      @apply rounded-md px-2 py-1 text-center font-medium text-black shadow-sm ring-1 ring-slate-700/10 hover:bg-slate-50
     }
 
     .link {
-      @apply font-medium text-gray-700 underline decoration-pink-500
+      @apply font-medium text-white underline decoration-pink-500
     }
 
     label {
-      @apply block uppercase text-slate-700 mb-2
+      @apply block uppercase text-white mb-2
+
     }
 
-    input, 
+    input,
     textarea {
-      @apply shadow-sm appearance-none border w-full py-2 px-3 text-slate-700 leading-tight focus:outline-none
+      @apply shadow-sm appearance-none border w-80 py-2 px-3 text-black leading-tight focus:outline-none
     }
 
     .error {
       @apply text-red-500 text-sm
     }
+
+
   </style>
   {{-- blade-formatter-enable --}}
 
   @yield('styles')
 </head>
 
-<body class="container mx-auto mt-10 mb-10 max-w-lg">
+<body class="bg-black text-white container mx-auto mt-10 mb-10 text-center">
 <h1 class="mb-4 text-2xl">@yield('title')</h1>
   <div x-data="{ flash: true }">
     @if (session()->has('success'))
@@ -105,7 +108,7 @@
 
     @yield('content')
   </div>
-  
+
 </body>
 
 </html>
